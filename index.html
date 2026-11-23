@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hava Durumu Uygulaması</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="app-header">
+      <h1>Hava Durumu</h1>
+      <button id="unit-toggle" class="btn-secondary" type="button" title="Sıcaklık birimini değiştir">
+        °C / °F
+      </button>
+    </header>
+
+    <form id="search-form" class="search-box">
+      <input
+        id="city-input"
+        type="text"
+        placeholder="Şehir ara (ör. Diyarbakır, İstanbul, Ankara)..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit" class="btn-primary">Ara</button>
+      <button id="geo-btn" type="button" class="btn-secondary" title="Mevcut konumumu kullan">
+        Konumum
+      </button>
+    </form>
+
+    <div id="recent-searches" class="recent-searches" aria-label="Son aranan şehirler"></div>
+
+    <p id="status-message" class="status-message" aria-live="polite"></p>
+
+    <section id="weather-content" class="weather-content hidden">
+      <article class="current-card">
+        <div class="current-main">
+          <div>
+            <h2 id="location-name">-</h2>
+            <p id="weather-desc" class="weather-desc">-</p>
+          </div>
+          <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
+        </div>
+
+        <div class="temp-row">
+          <span id="current-temp" class="current-temp">--°</span>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="label">Hissedilen</span>
+            <strong id="apparent-temp">--°</strong>
+          </div>
+          <div class="detail-item">
+            <span class="label">Nem</span>
+            <strong id="humidity">--%</strong>
+          </div>
+          <div class="detail-item">
+            <span class="label">Rüzgâr</span>
+            <strong id="wind-speed">-- km/s</strong>
+          </div>
+        </div>
+      </article>
+
+      <section class="forecast-section">
+        <h3>5 Günlük Tahmin</h3>
+        <div id="forecast-list" class="forecast-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./indexxx.js"></script>
+</body>
+</html>
